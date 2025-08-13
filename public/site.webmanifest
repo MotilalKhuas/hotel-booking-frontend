@@ -1,6 +1,6 @@
 {
-  "name": "HotelBooking",
-  "short_name": "HotelBooking",
+  "name": "Booking.com",
+  "short_name": "Booking.com",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -16,5 +16,5 @@
   "theme_color": "#113B95",
   "background_color": "#ffffff",
   "display": "browser",
-  "description": "Vacation Rentals, Homes, Experiences & Places - HotelBooking"
+  "description": "Vacation Rentals, Homes, Experiences & Places - Booking.com"
 }
