@@ -10,7 +10,7 @@ const HeroSection = () => {
             <p className='text-2xl font-medium leading-snug'>
                 Search deals on hotels, homes, and much more...
             </p>
-            <Button className="text-base font-semibold h-12 mt-6 px-4 cursor-pointer">Discover Holiday Rentals</Button>
+            <Button className="text-base font-semibold h-12 mt-6 mb-15 px-4 cursor-pointer">Discover Holiday Rentals</Button>
         </div>
     </section>
   )

@@ -1,4 +1,4 @@
-import {Bed, Plane, CarFront, CarTaxiFront, FerrisWheel, Star, Gem, CurlyBraces, Heart, Check, CircleCheck, Zap, Info, EyeOff, Eye } from "lucide-react"
+import {Bed, Plane, CarFront, CarTaxiFront, FerrisWheel, Star, Gem, CurlyBraces, Heart, Check, CircleCheck, Zap, Info, EyeOff, Eye, X, MapPin, LucideBed, BedDouble, BedSingle, Calendar } from "lucide-react"
 
 const icons = {
     bed : Bed,
@@ -15,6 +15,9 @@ const icons = {
     info:Info,
     eye:Eye,
     eyeOff:EyeOff,
+    close:X,
+    location:MapPin,
+    bedSingle:BedSingle,
     twitter: ({ size, ...props }) => (
     <svg
       width={size}
