@@ -1,6 +1,7 @@
 import {useForm} from 'react-hook-form'
 import { Form } from '@/components/ui/form';
 import LocationInput from './locationInput';
+import DateSelectInput from './datePicker'
 import {Button} from '@/components/ui/button'
 
 const Search = () =>{
@@ -24,6 +25,11 @@ const Search = () =>{
                     <div className="flex-1 h-full">
                         <LocationInput form={form} />
                     </div>
+
+                    <div className="flex-1 h-full">
+                        <DateSelectInput form={form} />
+                    </div>
+
                     <Button className="text-lg h-full">Search</Button>
                 </form>
             </Form>
@@ -32,3 +38,4 @@ const Search = () =>{
 }
  
 export default Search;
+
