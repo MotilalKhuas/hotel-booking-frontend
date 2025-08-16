@@ -2,13 +2,20 @@ import {useForm} from 'react-hook-form'
 import { Form } from '@/components/ui/form';
 import LocationInput from './locationInput';
 import DateSelectInput from './datePicker'
+import OccupancyInput from './occupancy';
 import {Button} from '@/components/ui/button'
+import dayjs from 'dayjs';
 
 const Search = () =>{
     const form = useForm({
-        defaultValues:{
-            city:"",
-        }
+        defaultValues: {
+            city: '',
+            roomsCount: 1,
+            bookingDates: {
+                from: dayjs().toDate(),
+                to: dayjs().add(1, 'day').toDate()
+            }
+        },
     });
  
     function onSubmit(data){
@@ -28,6 +35,10 @@ const Search = () =>{
 
                     <div className="flex-1 h-full">
                         <DateSelectInput form={form} />
+                    </div>
+
+                    <div className="flex-1 h-full">
+                        <OccupancyInput form={form} />
                     </div>
 
                     <Button className="text-lg h-full">Search</Button>

@@ -51,7 +51,7 @@ const HotelRoomPicker = ({rooms}) => {
           <Button 
             size="lg" 
             variant="outline"
-            className={`cursor-pointer h-12 font-semibold gap-1 w-[180px] disabled:opacity-80 uppercase ${
+            className={`h-12 font-semibold gap-1 w-[180px] disabled:opacity-80 uppercase ${
             !isSelected && 'hover:text-destructive text-destructive'
           }`}
           >

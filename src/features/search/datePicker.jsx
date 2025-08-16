@@ -23,7 +23,6 @@ const DateSelectInput = ({form}) => {
                 render={({ field }) => (
                 <FormControl>
                     <div className='flex-1 flex items-center gap-2 text-sm font-semibold px-2 h-full'>
-                    {console.log(field)}
                         <p>
                             {field?.value?.from 
                                 ?dayjs(field.value.from).format('ddd D MMM') 

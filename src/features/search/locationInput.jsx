@@ -18,7 +18,6 @@ const LocationInput = ({form}) => {
 
   return (
     <Popover open={isPopOverOpen} onOpenChange={setIsPopOverOpen}>
-      
       <PopoverTrigger asChild>
         <div className='flex gap-1 items-center bg-background rounded px-4 py-2 h-full w-full'>
           <Icon
@@ -43,7 +42,7 @@ const LocationInput = ({form}) => {
           <Button
             type="button"
             variant="ghost"
-            className={city ? "cursor-pointer" : "hidden"}
+            className={city ? "" : "hidden"}
             onClick = {(e)=>{
               e.preventDefault();
               form.setValue("city","");
