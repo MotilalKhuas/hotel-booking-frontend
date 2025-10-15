@@ -138,3 +138,181 @@ export const DESTINATIONS = [
   { city: 'Chennai', country: 'India' },
   { city: 'Pune', country: 'India' }
 ];
+
+export const SEARCH_RESULT_PAGE_LIMIT = 20;
+
+export const STAR_FILTERS = [
+  {
+    id : 1,
+    label : '5 Star',
+    value : 5
+  },
+  {
+    id : 2,
+    label : '4 Star',
+    value : 4
+  },
+  {
+    id : 3,
+    label : '3 Star',
+    value : 3
+  },
+  {
+    id : 4,
+    label : '2 Star',
+    value : 2
+  },
+  {
+    id : 5,
+    label : '1 Star',
+    value : 1
+  },
+]
+
+export const PRICE_FILTERS = [
+  {
+    id : 1,
+    label : '₹0 - ₹500',
+    value : '0-500'
+  },
+  {
+    id : 2,
+    label : '₹500 - ₹1000',
+    value : '500-1000'
+  },
+  {
+    id : 3,
+    label : '₹1000 - ₹1500',
+    value : '1000-1500'
+  },
+  {
+    id : 4,
+    label : '₹1500 - ₹2000',
+    value : '1500-2000'
+  },
+  {
+    id : 5,
+    label : '₹2000 - ₹2500',
+    value : '2000-2500'
+  },
+]
+
+export const SEARCH_FILTERS = [
+  {
+    label: 'Our top picks',
+    value: 'popularity',
+  },
+  {
+    label: 'Price (lowest first)',
+    value: 'price-asc',
+  },
+  {
+    label: 'Price (highest first)',
+    value: 'price-desc',
+  },
+];
+
+export const HOTELS_INFO = {
+  "content": [
+    {
+      "id": 1,
+      "name": "The Grand Crown Luxury Hotel and Convention Cente",
+      "city": "BBSR",
+      "photos": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg",
+        "https://images.pexels.com/photos/19570521/pexels-photo-19570521.jpeg",
+        "https://images.pexels.com/photos/13914276/pexels-photo-13914276.jpeg",
+        "https://images.pexels.com/photos/33552579/pexels-photo-33552579.jpeg"
+      ],
+      "amenities": ["AC", "Free Breakfast", "Parking", "Free WiFi", "GYM"],
+      "contactInfo": {
+        "address": "Jaydev Vihar",
+        "phoneNumber": "9123456222",
+        "email": "contact@crown.com",
+        "location": "20.2961,85.8245"
+      },
+      "price": 2499.0
+    },
+    {
+      "id": 2,
+      "name": "Horizon Residency and Premium Business Suites",
+      "city": "BBSR",
+      "photos": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg",
+        "https://images.pexels.com/photos/19570521/pexels-photo-19570521.jpeg",
+        "https://images.pexels.com/photos/13914276/pexels-photo-13914276.jpeg",
+        "https://images.pexels.com/photos/33552579/pexels-photo-33552579.jpeg"
+      ],
+      "amenities": ["AC", "Free WiFi", "Pool", "GYM"],
+      "contactInfo": {
+        "address": "Khandagiri",
+        "phoneNumber": "9123456223",
+        "email": "contact@horizon.com",
+        "location": "20.2965,85.8200"
+      },
+      "price": 1999.0
+    },
+    {
+      "id": 3,
+      "name": "Sunview International Hotel and Spa Retreat",
+      "city": "BBSR",
+      "photos": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg",
+        "https://images.pexels.com/photos/19570521/pexels-photo-19570521.jpeg",
+        "https://images.pexels.com/photos/13914276/pexels-photo-13914276.jpeg",
+        "https://images.pexels.com/photos/33552579/pexels-photo-33552579.jpeg"
+      ],
+      "amenities": ["AC", "Free Breakfast", "Spa", "Parking"],
+      "contactInfo": {
+        "address": "Saheed Nagar",
+        "phoneNumber": "9123456224",
+        "email": "contact@sunview.com",
+        "location": "20.3120,85.8240"
+      },
+      "price": 2799.0
+    },
+    {
+      "id": 4,
+      "name": "Pearl Heritage Hotel and Fine Dining Experience",
+      "city": "BBSR",
+      "photos": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg",
+        "https://images.pexels.com/photos/19570521/pexels-photo-19570521.jpeg",
+        "https://images.pexels.com/photos/13914276/pexels-photo-13914276.jpeg",
+        "https://images.pexels.com/photos/33552579/pexels-photo-33552579.jpeg"
+      ],
+      "amenities": ["AC", "Restaurant", "Free WiFi", "Parking"],
+      "contactInfo": {
+        "address": "Patia",
+        "phoneNumber": "9123456225",
+        "email": "contact@pearl.com",
+        "location": "20.3140,85.8170"
+      },
+      "price": 2299.0
+    },
+    {
+      "id": 5,
+      "name": "Royal Palace Hotel with Banquet Hall and Rooftop Lounge",
+      "city": "BBSR",
+      "photos": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/1134175/pexels-photo-1134175.jpeg",
+        "https://images.pexels.com/photos/19570521/pexels-photo-19570521.jpeg",
+        "https://images.pexels.com/photos/13914276/pexels-photo-13914276.jpeg",
+        "https://images.pexels.com/photos/33552579/pexels-photo-33552579.jpeg"
+      ],
+      "amenities": ["AC", "Free WiFi", "GYM", "Pool", "24x7 CCTV"],
+      "contactInfo": {
+        "address": "Bapuji Nagar",
+        "phoneNumber": "9123456226",
+        "email": "contact@royal.com",
+        "location": "20.3145,85.8280"
+      },
+      "price": 2599.0
+    }
+  ]
+}
