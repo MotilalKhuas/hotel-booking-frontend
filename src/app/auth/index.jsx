@@ -1,6 +1,6 @@
 import AuthLayout from "@/components/layouts/auth.layout.jsx"
-import SignIn from "./signin.jsx"
-import SignUp from "./signup.jsx"
+import SignIn from "./components/signin.jsx"
+import SignUp from "./components/signup.jsx"
 
 const SignInPage = () =>{
     return(

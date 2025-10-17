@@ -1,10 +1,19 @@
 import React from 'react'
 import AppRouter from './router.jsx'
+import { Toaster } from 'sonner'
 
 
 const App = () => {
   return (
-    <AppRouter/>
+    <>
+      <Toaster
+        position="top-right"
+        expand={false}
+        richColors  
+        closeButton
+      />
+      <AppRouter/>
+    </>
   )
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import {Button} from '@/components/ui/button.jsx'
 import {SERVICE_LIST} from '@/config/app.config.js'
 import Icon from '@/components/ui/icon'
+import { Link } from 'react-router'
+import { PATHS } from '@/config/path.config'
 
 const Header = () => {
     return (
@@ -13,8 +15,18 @@ const Header = () => {
                     </a>
                 </div>
                 <div id="auth" className='flex gap-2 justify-center items-center'>
-                    <Button className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2">Register</Button>
-                    <Button className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2">Sign in</Button>
+                    <Button 
+                        asChild
+                        className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
+                    >
+                        <Link to={PATHS.SIGN_UP}>Register</Link>
+                    </Button>
+                    <Button
+                        asChild 
+                        className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
+                    >
+                        <Link to={PATHS.SIGN_IN}>Sign in</Link>
+                    </Button>
                 </div>
             </div>
             <div className='container flex gap-1'>
