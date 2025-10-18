@@ -1,5 +1,5 @@
 import { useQuery as useRq } from '@tanstack/react-query'
-import axiosInstance from '../axios-instance'
+import axiosInstance from '../axiosInstance'
 
 const useQuery = ({url, axiosOptions = {}, queryOptions = {}}) => {
 
