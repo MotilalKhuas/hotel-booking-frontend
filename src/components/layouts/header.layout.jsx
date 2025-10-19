@@ -4,8 +4,13 @@ import {SERVICE_LIST} from '@/config/app.config.js'
 import Icon from '@/components/ui/icon'
 import { Link } from 'react-router'
 import { PATHS } from '@/config/path.config'
+import { useAuthContext } from '@/lib/providers/authContextProvider'
+import AccountMenu from '../account-menu'
 
 const Header = () => {
+
+    const {authenticatedUser} = useAuthContext();
+
     return (
         <header className="bg-brand py-3">
             <div className='container flex justify-between items-center'>
@@ -15,18 +20,24 @@ const Header = () => {
                     </a>
                 </div>
                 <div id="auth" className='flex gap-2 justify-center items-center'>
-                    <Button 
-                        asChild
-                        className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
-                    >
-                        <Link to={PATHS.SIGN_UP}>Register</Link>
-                    </Button>
-                    <Button
-                        asChild 
-                        className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
-                    >
-                        <Link to={PATHS.SIGN_IN}>Sign in</Link>
-                    </Button>
+                    {
+                        authenticatedUser.isAuthenticated ?
+                        <AccountMenu user={authenticatedUser.user}/> :
+                        <>
+                            <Button 
+                                asChild
+                                className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
+                            >
+                                <Link to={PATHS.SIGN_UP}>Register</Link>
+                            </Button>
+                            <Button
+                                asChild 
+                                className="bg-white text-primary text-[0.8125rem] font-[650] border-primary rounded-sm hover:bg-white/95 px-3 py-2"
+                            >
+                                <Link to={PATHS.SIGN_IN}>Sign in</Link>
+                            </Button>
+                        </>
+                    }
                 </div>
             </div>
             <div className='container flex gap-1'>

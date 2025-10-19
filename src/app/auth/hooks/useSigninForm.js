@@ -7,10 +7,12 @@ import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router";
 import {zodResolver} from "@hookform/resolvers/zod"
 import { toast } from "sonner";
+import { useAuthContext } from "@/lib/providers/authContextProvider";
 
 const useSignInForm = ()=>{
 
     const navigate = useNavigate();
+    const {refetchUser} = useAuthContext(); 
 
     const form = useForm({
         defaultValues : {
@@ -30,6 +32,7 @@ const useSignInForm = ()=>{
             onSuccess : (response)=>{
                 setStorageItem(AUTH_TOKEN_KEY, response.accessToken);
                 toast.success("Logged In Successfully.");
+                refetchUser();
                 navigate(PATHS.HOME)
             },
             onError : (error)=>{
