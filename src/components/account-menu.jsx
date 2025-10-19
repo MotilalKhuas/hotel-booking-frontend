@@ -12,8 +12,11 @@ import LinkButton from './ui/linkButton'
 import { PATHS } from '@/config/path.config';
 import { Button } from './ui/button';
 import Icon from './ui/icon';
+import useLogoutHandler from '@/app/auth/hooks/useLogout';
 
 const AccountMenu = ({user}) => {
+
+    const {logoutHandler, isPending} = useLogoutHandler();
 
     return (
         <DropdownMenu>
@@ -72,6 +75,8 @@ const AccountMenu = ({user}) => {
                     <Button
                         variant="ghost"
                         className="flex items-center justify-start gap-2 w-full"
+                        onClick = {logoutHandler}
+                        disabled = {isPending}
                     >
                         <Icon icon="logout" size={25}/>
                         Logout
