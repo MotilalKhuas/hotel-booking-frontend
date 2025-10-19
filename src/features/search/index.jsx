@@ -1,8 +1,8 @@
 import {useForm} from 'react-hook-form'
 import { Form } from '@/components/ui/form';
-import LocationInput from './locationInput';
-import DateSelectInput from './datePicker'
-import OccupancyInput from './occupancy';
+import LocationInput from './components/locationInput';
+import DateSelectInput from './components/datePicker'
+import OccupancyInput from './components/occupancy';
 import {Button} from '@/components/ui/button'
 import dayjs from 'dayjs';
 
