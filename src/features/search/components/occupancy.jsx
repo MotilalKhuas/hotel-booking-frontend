@@ -47,7 +47,7 @@ const OccupancyInput = ({form}) => {
                             <Button 
                                 className="text-primary hover:text-primary bg-white hover:bg-brand/5 rounded-none size-11"
                                 onClick={()=>form.setValue("roomsCount", rooms-1)}
-                                disabled={rooms===0}
+                                disabled={rooms===1}
                             >
                                 <Icon
                                     icon="minus"
@@ -61,6 +61,7 @@ const OccupancyInput = ({form}) => {
                             <Button 
                                 className="text-primary hover:text-primary bg-white hover:bg-brand/5 rounded-none size-11"
                                 onClick={()=>form.setValue("roomsCount", rooms+1)}
+                                disabled={rooms===10}
                             >
                                 <Icon
                                     icon="plus"

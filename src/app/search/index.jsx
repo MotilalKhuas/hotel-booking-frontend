@@ -1,15 +1,15 @@
 import React from 'react'
-
 import Filter from './filter/index'
 import SortFilter from './filter/components/sortFilter'
 import Hotels from './hotels'
 import PaginationFilter from './filter/components/paginationFilter'
-import { HOTELS_INFO } from '@/config/app.config'
+import useGetHotels from './hotels/hooks/useGetHotels'
 
 const SearchPage = () => {
 
-  const hotels = HOTELS_INFO.content;
-  const totalEntries = hotels.length || 0
+  const {data, isLoading, error, city} = useGetHotels();
+  const hotels = data?.content || [];
+  const totalEntries = data?.totalElements || 0;
 
   return (
     <div className='container flex gap-4 mt-4 mb-6'>
@@ -19,7 +19,7 @@ const SearchPage = () => {
               <h1 className='text-xl font-bold'>Jaipur: 858 properties found</h1>
               <SortFilter/>
           </div>
-          <Hotels data={hotels}/>
+          <Hotels error={error} isLoading={isLoading} data={hotels}/>
           {totalEntries > 0 && <PaginationFilter/>} 
       </section>
     </div>
