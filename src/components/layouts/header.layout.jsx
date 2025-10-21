@@ -15,9 +15,9 @@ const Header = () => {
         <header className="bg-brand py-3">
             <div className='container flex justify-between items-center'>
                 <div id="logo-wrapper">
-                    <a hrfe="#" aria-label="HotelBooking">
-                        <img src="public\assets\booking.com.svg" alt="HotelBooking" width={144} height={24}/>
-                    </a>
+                    <Link to={PATHS.HOME} aria-label='hotelBooking'>
+                        <img src="/assets/booking.com.svg" alt="HotelBooking" width={144} height={24}/>
+                    </Link>
                 </div>
                 <div id="auth" className='flex gap-2 justify-center items-center'>
                     {
