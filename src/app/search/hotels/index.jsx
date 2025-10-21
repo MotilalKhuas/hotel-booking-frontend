@@ -1,16 +1,15 @@
 import React from 'react'
 import HotelCardSkeliton from './components/hotelCardSkeliton'
 import HotelCard from './components/hotelCard'
+import { SEARCH_RESULT_PAGE_LIMIT } from '@/config/app.config'
 
-const Hotels = ({data}) => {
-  
-  const isLoading = false;
+const Hotels = ({error, isLoading, data}) => {
 
   if(isLoading){
     return(
       <div className='space-y-2'>
         {
-          Array(2).fill(0).map((_,index)=>(
+          Array(SEARCH_RESULT_PAGE_LIMIT).fill(0).map((_,index)=>(
             <HotelCardSkeliton key={index}/>
           ))
         }

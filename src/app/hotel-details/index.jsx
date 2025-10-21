@@ -4,11 +4,15 @@ import HotelMetaDetails from './components/hotel-meta-details.jsx'
 import HotelRoomPicker from './components/hotel-room-picker.jsx'
 import HotelPolicy from './components/hotel-policy.jsx'
 import HotelCheckoutCard from './components/hotel-checkout-card.jsx'
-import { HOTEL_DATA, HOTEL_INFO } from './hotel-details-dummy-data.js'
+import {HOTEL_INFO } from './hotel-details-dummy-data.js'
+import useGetHotelData from './hooks/useGetHotelData.js'
 
 const HotelDetails = () => {
-    const hotelData = HOTEL_DATA
+    const {hotelData, isLoading, error} = useGetHotelData();
     const hotelInfo = HOTEL_INFO
+
+    if(isLoading) return(<p>Loading.....</p>);
+
     return (
         <div className='container mt-6 mb-12'>
             <PropertyViewCarousel images={hotelData.hotel.photos}/>

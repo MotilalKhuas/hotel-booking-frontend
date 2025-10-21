@@ -1,5 +1,7 @@
 import Icon from '@/components/ui/icon'
 import React, { useState } from 'react'
+import { Link } from 'react-router';
+import useHotelNavigation from '../hooks/useHotelNavigation';
 
 const hotelDetails = {
   description:
@@ -124,16 +126,19 @@ const HotelPrice = ({hotelDetails, price}) =>{
 }
 
 const HotelCard = ({ name, photos, city, id, amenities, price }) => {
+   const navigationUrl = useHotelNavigation(id)
   return (
-    <article className='flex border border-border rounded-lg w-full transition-colors hover:border-primary'>
-    <div className='flex flex-1 gap-4 p-4'>
-        <HotelImages photos={photos}/>
-        <HotelInfo name={name} city={city} amenities={amenities} hotelDetails={hotelDetails}/>
-    </div>
-    <div className="flex flex-col items-end text-end shrink-0 border-l border-border w-48 p-4">
-        <HotelPrice hotelDetails={hotelDetails} price={price}/>
-    </div>
-    </article>
+    <Link to={navigationUrl}>
+        <article className='flex border border-border rounded-lg w-full transition-colors hover:border-primary'>
+        <div className='flex flex-1 gap-4 p-4'>
+            <HotelImages photos={photos}/>
+            <HotelInfo name={name} city={city} amenities={amenities} hotelDetails={hotelDetails}/>
+        </div>
+        <div className="flex flex-col items-end text-end shrink-0 border-l border-border w-48 p-4">
+            <HotelPrice hotelDetails={hotelDetails} price={price}/>
+        </div>
+      </article>
+    </Link>
   )
 }
 
