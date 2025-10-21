@@ -16,7 +16,7 @@ const SearchPage = () => {
       <Filter/>
       <section className='flex-1 space-y-6'>
           <div className='flex items-center justify-between'>
-              <h1 className='text-xl font-bold'>Jaipur: 858 properties found</h1>
+              <h1 className='text-xl font-bold'>{`${city} : ${totalEntries} properties found`}</h1>
               <SortFilter/>
           </div>
           <Hotels error={error} isLoading={isLoading} data={hotels}/>
