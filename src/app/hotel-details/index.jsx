@@ -1,9 +1,9 @@
 import React from 'react'
-import PropertyViewCarousel from './property-view-carousel.jsx'
-import HotelMetaDetails from './hotel-meta-details.jsx'
-import HotelRoomPicker from './hotel-room-picker.jsx'
-import HotelPolicy from './hotel-policy.jsx'
-import HotelCheckoutCard from './hotel-checkout-card.jsx'
+import PropertyViewCarousel from './components/property-view-carousel.jsx'
+import HotelMetaDetails from './components/hotel-meta-details.jsx'
+import HotelRoomPicker from './components/hotel-room-picker.jsx'
+import HotelPolicy from './components/hotel-policy.jsx'
+import HotelCheckoutCard from './components/hotel-checkout-card.jsx'
 import { HOTEL_DATA, HOTEL_INFO } from './hotel-details-dummy-data.js'
 
 const HotelDetails = () => {
