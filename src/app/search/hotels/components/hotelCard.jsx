@@ -56,18 +56,18 @@ const HotelImages = ({photos}) =>{
   )
 }
 
-const HotelInfo = ({name, city, amenities, hotelDetails}) =>{
+const HotelInfo = ({name, city, amenities, star, hotelDetails}) =>{
   return(
     <div className='flex-1 space-y-3'>
       <div className='space-y-0.5'>
         <h2 className='inline text-xl font-bold'>
           {name} &nbsp;
-          {new Array(3).fill(0).map((_, index)=>(
+          {new Array(star).fill(0).map((_, index)=>(
             <Icon
               key={index}
               icon="star"
               size={12}
-              className="inline mb-2 fill-black"
+              className="inline mb-2 fill-yellow-400"
             />
           ))}
         </h2>
@@ -125,14 +125,14 @@ const HotelPrice = ({hotelDetails, price}) =>{
   )
 }
 
-const HotelCard = ({ name, photos, city, id, amenities, price }) => {
+const HotelCard = ({ name, photos, city, id, amenities, price, star}) => {
    const navigationUrl = useHotelNavigation(id)
   return (
     <Link to={navigationUrl}>
         <article className='flex border border-border rounded-lg w-full transition-colors hover:border-primary'>
         <div className='flex flex-1 gap-4 p-4'>
             <HotelImages photos={photos}/>
-            <HotelInfo name={name} city={city} amenities={amenities} hotelDetails={hotelDetails}/>
+            <HotelInfo name={name} city={city} amenities={amenities} star={star} hotelDetails={hotelDetails}/>
         </div>
         <div className="flex flex-col items-end text-end shrink-0 border-l border-border w-48 p-4">
             <HotelPrice hotelDetails={hotelDetails} price={price}/>
