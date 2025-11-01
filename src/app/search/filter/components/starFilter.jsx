@@ -3,7 +3,7 @@ import { FormField, FormItem, FormLabel, FormControl} from '@/components/ui/form
 import { Checkbox } from '@/components/ui/checkbox'
 import {STAR_FILTERS} from '@/config/app.config'
 
-const StarFilter = ({form}) => {
+const StarFilter = ({form, filterChangeHandler}) => {
   return (
     <div className="border-t border-border p-3">
       <h4 className="text-sm font-semibold mb-3">Star Category</h4>
@@ -24,6 +24,7 @@ const StarFilter = ({form}) => {
                               ? [...(field.value), star.value]
                               : field.value.filter(val=>val!=star.value);
                             field.onChange(newStars);
+                            filterChangeHandler();
                           }}
                         />
                     </FormControl>

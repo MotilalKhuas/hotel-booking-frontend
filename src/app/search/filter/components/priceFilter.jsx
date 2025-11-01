@@ -3,7 +3,7 @@ import { FormField, FormItem, FormLabel, FormControl} from '@/components/ui/form
 import { Checkbox } from '@/components/ui/checkbox'
 import {PRICE_FILTERS} from '@/config/app.config'
 
-const PriceFilter = ({form}) => {
+const PriceFilter = ({form, filterChangeHandler}) => {
   return (
     <div className="border-t border-border p-3">
       <h4 className="text-sm font-semibold mb-3">Price per night</h4>
@@ -24,6 +24,7 @@ const PriceFilter = ({form}) => {
                         ? [...(field.value), price.value]
                         : field.value.filter(val=>val!=price.value)
                       field.onChange(newPriceRanges);
+                      filterChangeHandler();
                     }}
                   />
                 </FormControl>
