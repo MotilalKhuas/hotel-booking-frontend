@@ -7,7 +7,7 @@ import useGetHotels from './hotels/hooks/useGetHotels'
 
 const SearchPage = () => {
 
-  const {data, isLoading, error, city} = useGetHotels();
+  const {data, isLoading, error, city, pageSize} = useGetHotels();
   const hotels = data?.content || [];
   const totalEntries = data?.totalElements || 0;
 
@@ -19,8 +19,8 @@ const SearchPage = () => {
               <h1 className='text-xl font-bold'>{`${city} : ${totalEntries} properties found`}</h1>
               <SortFilter/>
           </div>
-          <Hotels error={error} isLoading={isLoading} data={hotels}/>
-          {totalEntries > 0 && <PaginationFilter/>} 
+          <Hotels error={error} isLoading={isLoading} data={hotels} pageSize={pageSize}/>
+          {totalEntries > 0 && <PaginationFilter totalData={totalEntries}/>} 
       </section>
     </div>
   )

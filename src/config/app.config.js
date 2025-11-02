@@ -150,9 +150,10 @@ export const SEARCH_PARAMS_KEYS = {
   STAR_CATEGORY: 'starCategory',
   PRICE_RANGE: 'priceRange',
   NEXT_REDIRECT: 'next',
+  SIZE : 'size'
 };
 
-export const SEARCH_RESULT_PAGE_LIMIT = 20;
+export const SEARCH_RESULT_PAGE_LIMIT = 2;
 
 export const STAR_FILTERS = [
   {
