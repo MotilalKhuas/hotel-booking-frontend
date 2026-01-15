@@ -17,7 +17,7 @@ const Hotels = ({error, isLoading, data, pageSize}) => {
   }
 
   return (
-    <div className='space-y-2'>
+    <div className='flex flex-col gap-y-2'>
       {data.map((hotel)=>(
         <HotelCard key={hotel.id} {...hotel}/>
       ))}

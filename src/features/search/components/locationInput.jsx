@@ -11,7 +11,7 @@ const LocationInput = ({form}) => {
   const [isPopOverOpen, setIsPopOverOpen] = useState(false);
 
   function onSelectCity(e,index){
-    const selectedLocation = `${DESTINATIONS[index].city}, ${DESTINATIONS[index].country}`;
+    const selectedLocation = `${DESTINATIONS[index].city}`;
     form.setValue("city", selectedLocation);
     setIsPopOverOpen(false);
   }
