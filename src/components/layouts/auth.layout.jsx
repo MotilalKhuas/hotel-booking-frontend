@@ -1,7 +1,6 @@
 import {getAssetPath} from "@/lib/utils.js"
 
 const AuthLayout = ({children, title, description}) =>{
-    console.log(getAssetPath("bookingcom-icon-logo.svg"));
     return(
         <div className="flex justify-center items-center py-10 sm:py-20 px-5 w-full">
             <div className="rounded-lg shadow-md sm:mx-auto p-4 sm:p-6 w-full sm:max-w-md">

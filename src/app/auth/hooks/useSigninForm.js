@@ -4,7 +4,7 @@ import useMutation from "@/lib/hooks/useMutation"
 import { AUTH_TOKEN_KEY, setStorageItem } from "@/lib/storageManager";
 import { signinSchema } from "@/lib/validators/authFormValidator";
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import {zodResolver} from "@hookform/resolvers/zod"
 import { toast } from "sonner";
 import { useAuthContext } from "@/lib/providers/authContextProvider";
@@ -13,6 +13,7 @@ const useSignInForm = ()=>{
 
     const navigate = useNavigate();
     const {refetchUser} = useAuthContext(); 
+    const location = useLocation();
 
     const form = useForm({
         defaultValues : {
@@ -29,11 +30,11 @@ const useSignInForm = ()=>{
 
     function handleSigninSubmit(data){
         mutate(data,{
-            onSuccess : (response)=>{
+            onSuccess : async (response)=>{
                 setStorageItem(AUTH_TOKEN_KEY, response.accessToken);
                 toast.success("Logged In Successfully.");
-                refetchUser();
-                navigate(PATHS.HOME)
+                await refetchUser();
+                navigate(location.state?.from || PATHS.HOME, {replace : true});
             },
             onError : (error)=>{
                 console.log(error);

@@ -1,6 +1,8 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import useQuery from "../hooks/useQuery";
 import API_CONFIG from "@/config/api.config";
+import { Navigate, Outlet, useLocation } from "react-router";
+import { PATHS } from "@/config/path.config";
 
 const AuthContext = createContext({
     authenticatedUser : null,
@@ -55,5 +57,21 @@ const useAuthContext = ()=>{
     return useContext(AuthContext);
 }
 
+const WithAuthContext = ()=>{
+    const location = useLocation();
+    const {authenticatedUser} = useAuthContext();
+
+    if(!authenticatedUser.isAuthenticated){
+        const redirectUrl = `${location.pathname}${location.search}`;
+        console.log("url : ", redirectUrl);
+        console.log("SEARCH PARAMS : ", location.search);
+        return(
+            <Navigate to={`${PATHS.SIGN_IN}`} state={{from : redirectUrl}} replace/>
+        )
+    }
+
+    return <Outlet/>
+}
+
 export default AuthContextProvider
-export {useAuthContext}
+export {useAuthContext, WithAuthContext}
