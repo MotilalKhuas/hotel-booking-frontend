@@ -2,11 +2,11 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icon.jsx'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
-import { useConfirmCheckOut } from '../hooks/useConfirmCheckOut'
+import useConfirmCheckOut from '../hooks/useConfirmCheckOut'
 import { Form } from '@/components/ui/form'
 import DateSelectInput from '@/features/search/components/datePicker'
 import OccupancyInput from '@/features/search/components/occupancy'
-import { useGetSelectedRoomDetails } from '../hooks/useSelectedRoomDetails'
+import useGetSelectedRoomDetails from '../hooks/useSelectedRoomDetails'
 
 const CancellationPolicy = ({ cancellationPolicy }) => {
   return (
@@ -31,7 +31,7 @@ const CancellationPolicy = ({ cancellationPolicy }) => {
 
 const CheckOutSummery = ({ selectedRoom }) => {
 
-  const { form, handleUpdateDetailsFormSubmit } = useConfirmCheckOut();
+  const { form, handleUpdateDetailsFormSubmit, handleCheckoutConfirm } = useConfirmCheckOut();
 
   return (
     <div className='space-y-4'>
@@ -70,6 +70,7 @@ const CheckOutSummery = ({ selectedRoom }) => {
         </div>
       </div>
       <Button
+        onClick = {handleCheckoutConfirm}
         className="w-full h-12 text-base font-semibold"
         aria-label="Continue to Book"
       >

@@ -13,6 +13,12 @@ const API_CONFIG = {
   },
   USER : {
     PROFILE : "/users/profile"
+  },
+  BOOKINGS : {
+    INIT_BOOKING : {
+      METHOD : "POST",
+      URL : "bookings/init"
+    }
   }
 };
 

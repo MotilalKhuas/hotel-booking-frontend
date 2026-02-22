@@ -2,7 +2,7 @@ import { useMutation as useRm } from '@tanstack/react-query'
 import axiosInstance from '../axiosInstance'
 
 const useMutation = ({url, method, mutationOptions={}}) => {
-    const {mutate, isPending, error, isSuccess} = useRm({
+    const {mutate, data, isPending, error, isSuccess} = useRm({
         mutationFn : async(data)=>{
             const response = await axiosInstance({
                 url,
@@ -13,7 +13,7 @@ const useMutation = ({url, method, mutationOptions={}}) => {
         },
         ...mutationOptions
     })
-    return ({mutate, isPending, error, isSuccess});
+    return ({mutate, data, isPending, error, isSuccess});
 }
 
 export default useMutation

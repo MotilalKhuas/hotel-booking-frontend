@@ -1,6 +1,7 @@
 import React, {lazy} from 'react'
 import { createBrowserRouter, createRoutesFromChildren, RouterProvider, Route, Outlet } from 'react-router'
 import {PATHS} from '@/config/path.config'
+import { WithAuthContext } from '@/lib/providers/authContextProvider'
 
 const Header = lazy(()=>import("@/components/layouts/header.layout"))
 const Footer = lazy(()=>import("@/components/layouts/footer.layout"))
@@ -43,6 +44,12 @@ const router = createBrowserRouter(
                 path={PATHS.HOTEL}
                 lazy={()=>import("./hotel-details").then(module=>({Component : module.default}))}
             />
+        </Route>
+        <Route element={<WithAuthContext/>}>
+          <Route
+            path={PATHS.CHECKOUT}
+            lazy={()=>import("./checkout").then(module=>({Component : module.default}))}
+          />
         </Route>
         <Route
             path={PATHS.SIGN_IN}

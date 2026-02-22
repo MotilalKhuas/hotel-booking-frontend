@@ -34,4 +34,4 @@ function useGetSelectedRoomDetails(rooms=[]){
     return details;
 }
 
-export {useGetSelectedRoomDetails};
+export default useGetSelectedRoomDetails;

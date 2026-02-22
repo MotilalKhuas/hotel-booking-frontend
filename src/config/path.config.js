@@ -7,6 +7,8 @@ const PATHS = {
     HOTEL : "/hotel/:id?",
     SEARCH : "/search?",
 
+    CHECKOUT: "/hotel/:id/checkout?",
+
     PROFILE: '/me/profile',
     BOOKING_HISTORY: '/me/booking-history'
 }
