@@ -5,19 +5,25 @@ const API_CONFIG = {
       URL: (hotelId) => `/hotels/${hotelId}/info`,
     },
   },
-  AUTH : {
-    SIGN_IN : "/auth/login",
-    SIGN_UP : "/auth/signup",
+  AUTH: {
+    SIGN_IN: "/auth/login",
+    SIGN_UP: "/auth/signup",
     LOGOUT: '/auth/logout',
-    REFRESH : '/auth/refresh'
+    REFRESH: '/auth/refresh'
   },
-  USER : {
-    PROFILE : "/users/profile"
+  USER: {
+    PROFILE: "/users/profile"
   },
-  BOOKINGS : {
-    INIT_BOOKING : {
-      METHOD : "POST",
-      URL : "bookings/init"
+  GUESTS: {
+    ALL_GUESTS: {
+      METHOD: "GET",
+      URL: "users/guests"
+    },
+  },
+  BOOKINGS: {
+    INIT_BOOKING: {
+      METHOD: "POST",
+      URL: "bookings/init"
     }
   }
 };

@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import useInitCheckout from "./hooks/useInitCheckout";
 import BookingDetails from "./components/booking-details";
 import InitiatePaymentsButton from "./components/initiate-payment-button";
+import GuestContextProvider from "@/lib/providers/guestContextProvider";
 
 const CheckoutPage = () => {
 
@@ -20,10 +21,12 @@ const CheckoutPage = () => {
                     <h1 className="text-xl font-bold">Booking Checkout</h1>
                 </div>
                 <Separator className="my-4" />
-                <BookingDetails booking={data || {}} />
-                <div className="px-4 mt-6">
-                    <InitiatePaymentsButton />
-                </div>
+                <GuestContextProvider>
+                    <BookingDetails booking={data || {}} />
+                    <div className="px-4 mt-6">
+                        <InitiatePaymentsButton />
+                    </div>
+                </GuestContextProvider>
             </div>
         </div>
     )
