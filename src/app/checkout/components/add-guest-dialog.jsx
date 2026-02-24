@@ -9,11 +9,12 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import Icon from "@/components/ui/icon";
-import AddNewTraveler from "./add-new-traveler";
 import { useGuestContext } from "@/lib/providers/guestContextProvider";
 import { useEffect, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
-import EditTravelerDialog from "./edit-traveler-dialog";
+import AddNewTravellerDialog from "./add-new-traveller-dialog";
+import EditTravellerDialog from "./edit-traveller-dialog";
+
 
 const AddGuestDialog = () => {
 
@@ -49,7 +50,7 @@ const AddGuestDialog = () => {
             >
                 <DialogHeader className="flex flex-row justify-between items-center pb-3">
                     <DialogTitle className="font-bold">Add Guest</DialogTitle>
-                    <AddNewTraveler />
+                    <AddNewTravellerDialog />
                 </DialogHeader>
                 <div className='flex flex-col gap-3 max-h-52 overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-muted/40 [&::-webkit-scrollbar-thumb]:bg-muted-foreground/30 [&::-webkit-scrollbar-thumb:hover]:bg-muted-foreground/50 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:rounded-full'>
                     {
@@ -68,7 +69,7 @@ const AddGuestDialog = () => {
                                     <p className='text-sm font-medium'>{guest.name}</p>
                                 </div>
                                 <div>
-                                    <EditTravelerDialog />
+                                    <EditTravellerDialog guestData={guest}/>
                                 </div>
                             </div>
                         ))

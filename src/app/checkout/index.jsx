@@ -12,8 +12,6 @@ const CheckoutPage = () => {
         return <p>Loading...</p>;
     }
 
-    console.log(data);
-
     return (
         <div className="container flex justify-center my-20">
             <div className="flex-1 max-w-2xl border border-border shadow-lg rounded-xl bg-background py-4">

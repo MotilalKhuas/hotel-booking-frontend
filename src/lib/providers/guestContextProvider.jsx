@@ -17,7 +17,6 @@ const GuestContextProvider = ({ children }) => {
     })
 
     useEffect(() => {
-        console.log(data);
         if (data) setAllGuests([...data])
     }, [data])
 
