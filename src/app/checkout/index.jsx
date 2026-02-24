@@ -22,7 +22,7 @@ const CheckoutPage = () => {
                 <GuestContextProvider>
                     <BookingDetails booking={data || {}} />
                     <div className="px-4 mt-6">
-                        <InitiatePaymentsButton />
+                        <InitiatePaymentsButton id={data.id}/>
                     </div>
                 </GuestContextProvider>
             </div>

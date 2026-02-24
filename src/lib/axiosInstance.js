@@ -42,7 +42,7 @@ axiosInstance.interceptors.response.use(
 
         return Promise.reject({
             ...(error?.response?.data?.error || {}),
-            message : error?.response?.data?.error?.message || "Something went wrong!"
+            message : error?.response?.data?.msg?.msg || "Something went wrong!"
         });
     } 
 )

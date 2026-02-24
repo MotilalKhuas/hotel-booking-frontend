@@ -21,7 +21,7 @@ const CancellationPolicy = ({ cancellationPolicy }) => {
         <h3 className='text-base font-semibold'>Cancellation Policy</h3>
         <ul className='pl-4 space-y-3 list-disc'>
           {cancellationPolicy.map((policy, index) => (
-            <li className='text-sm leading-relaxed font-medium text-accent-foreground'>{policy}</li>
+            <li key={index} className='text-sm leading-relaxed font-medium text-accent-foreground'>{policy}</li>
           ))}
         </ul>
       </HoverCardContent>
