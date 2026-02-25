@@ -1,20 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router'
-import { Button } from './button'
-import  Icon  from './icon'
+import { NavLink } from 'react-router'
+import Icon from './icon'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from './button'
 
-const LinkButton = ({variant, className, to, icon, iconSize, children}) => {
-  return (
-    <Button asChild variant={variant} className={className}>
-        <Link 
+const LinkButton = ({ variant, className, activeClassName, icon, iconSize, to, children }) => {
+    return (
+        <NavLink
             to={to}
-            className='flex items-center justify-start gap-2'
+            className={({ isActive }) => {
+                return cn(
+                    buttonVariants({
+                        variant: variant,
+                        className: className,
+                    }),
+                    isActive && activeClassName
+                )
+            }}
         >
-            {icon && <Icon icon={icon} size={iconSize}/>}
+            {icon && <Icon icon={icon} size={iconSize} />}
             {children}
-        </Link>
-    </Button>
-  )
+        </NavLink>
+    )
 }
 
 export default LinkButton

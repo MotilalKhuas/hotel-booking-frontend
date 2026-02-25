@@ -12,7 +12,18 @@ const API_CONFIG = {
         REFRESH: '/auth/refresh'
     },
     USER: {
-        PROFILE: "/users/profile"
+        PROFILE: {
+            METHOD: "GET",
+            URL: "/users/profile"
+        },
+        BOOKING_HISTORY: {
+            METHOD: "GET",
+            URL: "users/myBookings"
+        },
+        UPDATE_PROFILE: {
+            METHOD: "PATCH",
+            URL: "/users/profile"
+        }
     },
     GUESTS: {
         ALL_GUESTS: {
@@ -26,7 +37,11 @@ const API_CONFIG = {
         UPDATE_GUEST: {
             METHOD: "PUT",
             URL: (guestId) => `users/guests/${guestId}`
-        }
+        },
+        REMOVE_GUEST: {
+            METHOD: "DELETE",
+            URL: (guestId) => `users/guests/${guestId}`
+        },
     },
     BOOKINGS: {
         INIT_BOOKING: {

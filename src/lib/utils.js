@@ -8,3 +8,7 @@ export function cn(...inputs) {
 export function getAssetPath(name) {
   return `/assets/${name}`;
 }
+
+export function getDefaultProfile(name){
+  return `https://api.dicebear.com/9.x/initials/svg?seed=${name}`;
+}

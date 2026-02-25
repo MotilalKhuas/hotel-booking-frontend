@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import LinkButton from './ui/linkButton'
@@ -13,16 +13,17 @@ import { PATHS } from '@/config/path.config';
 import { Button } from './ui/button';
 import Icon from './ui/icon';
 import useLogoutHandler from '@/app/auth/hooks/useLogout';
+import { getDefaultProfile } from '@/lib/utils';
 
-const AccountMenu = ({user}) => {
+const AccountMenu = ({ user }) => {
 
-    const {logoutHandler, isPending} = useLogoutHandler();
+    const { logoutHandler, isPending } = useLogoutHandler();
 
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild className="cursor-pointer">
                 <Avatar>
-                    <AvatarImage src={`https://api.dicebear.com/9.x/dylan/svg?seed=${user.name}`}/>
+                    <AvatarImage src={getDefaultProfile(user.name)} />
                     <AvatarFallback>${user.name}</AvatarFallback>
                 </Avatar>
             </DropdownMenuTrigger>
@@ -30,8 +31,8 @@ const AccountMenu = ({user}) => {
                 <DropdownMenuLabel>
                     <div className='flex gap-2 items-center'>
                         <Avatar>
-                            <AvatarImage 
-                                src={`https://api.dicebear.com/9.x/dylan/svg?seed=${user.name}`}
+                            <AvatarImage
+                                src={getDefaultProfile(user.name)}
                                 alt={`Profile image for ${user.name}`}
                             />
                             <AvatarFallback>{user.name}</AvatarFallback>
@@ -47,26 +48,28 @@ const AccountMenu = ({user}) => {
                     </div>
                 </DropdownMenuLabel>
 
-                <DropdownMenuSeparator className="my-3"/>
+                <DropdownMenuSeparator className="my-3" />
 
                 <DropdownMenuItem>
-                    <LinkButton 
-                        variant="ghost" 
-                        className="flex justify-start w-full"
+                    <LinkButton
+                        variant="ghost"
+                        className="flex justify-start items-center gap-2 w-full"
+                        activeClassName="bg-primary/10 text-primary pointer-events-none"
                         icon="user"
                         iconSize={25}
-                        to={PATHS.PROFILE}
+                        to={PATHS.SETTINGS.PROFILE}
                     >
                         My Profile
                     </LinkButton>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                    <LinkButton 
-                        variant="ghost" 
-                        className="flex justify-start w-full"
+                    <LinkButton
+                        variant="ghost"
+                        className="flex justify-start items-center gap-2 w-full"
+                        activeClassName="bg-primary/10 text-primary pointer-events-none"
                         icon="bookingHistory"
                         iconSize={25}
-                        to={PATHS.BOOKING_HISTORY}
+                        to={PATHS.SETTINGS.BOOKING_HISTORY}
                     >
                         My Bookings
                     </LinkButton>
@@ -75,10 +78,10 @@ const AccountMenu = ({user}) => {
                     <Button
                         variant="ghost"
                         className="flex items-center justify-start gap-2 w-full"
-                        onClick = {logoutHandler}
-                        disabled = {isPending}
+                        onClick={logoutHandler}
+                        disabled={isPending}
                     >
-                        <Icon icon="logout" size={25}/>
+                        <Icon icon="logout" size={25} />
                         Logout
                     </Button>
                 </DropdownMenuItem>

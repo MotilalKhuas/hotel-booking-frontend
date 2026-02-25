@@ -5,27 +5,27 @@ import { Navigate, Outlet, useLocation } from "react-router";
 import { PATHS } from "@/config/path.config";
 
 const AuthContext = createContext({
-    authenticatedUser : null,
-    setAuthenticatedUser : ()=>{},
-    refetchUser : ()=>{}
+    authenticatedUser: null,
+    setAuthenticatedUser: () => { },
+    refetchUser: () => { }
 });
 
-const AuthContextProvider = ({children}) => {
-    
+const AuthContextProvider = ({ children }) => {
+
     const [authenticatedUser, setAuthenticatedUser] = useState({
-        user : null,
-        isAuthenticated : false
+        user: null,
+        isAuthenticated: false
     });
 
-    const {data, isLoading, error, refetch} = useQuery({
-        url:API_CONFIG.USER.PROFILE,
-        queryOptions:{
-            queryKey : ["user"],
-            retry : false,
+    const { data, isLoading, error, refetch } = useQuery({
+        url: API_CONFIG.USER.PROFILE.URL,
+        queryOptions: {
+            queryKey: ["user"],
+            retry: false,
         }
     })
 
-    useEffect(()=>{
+    useEffect(() => {
 
         if (isLoading) return;
 
@@ -40,38 +40,38 @@ const AuthContextProvider = ({children}) => {
         if (!isUserSame || !isAuthSame) {
             setAuthenticatedUser(newAuthState);
         }
-    },[data, error, isLoading])
+    }, [data, error, isLoading])
 
     return (
         <AuthContext.Provider value={{
-            authenticatedUser, 
-            setAuthenticatedUser, 
-            refetchUser : refetch
+            authenticatedUser,
+            setAuthenticatedUser,
+            refetchUser: refetch
         }}>
             {children}
         </AuthContext.Provider>
     )
 }
 
-const useAuthContext = ()=>{
+const useAuthContext = () => {
     return useContext(AuthContext);
 }
 
-const WithAuthContext = ()=>{
+const WithAuthContext = () => {
     const location = useLocation();
-    const {authenticatedUser} = useAuthContext();
+    const { authenticatedUser } = useAuthContext();
 
-    if(!authenticatedUser.isAuthenticated){
+    if (!authenticatedUser.isAuthenticated) {
         const redirectUrl = `${location.pathname}${location.search}`;
         console.log("url : ", redirectUrl);
         console.log("SEARCH PARAMS : ", location.search);
-        return(
-            <Navigate to={`${PATHS.SIGN_IN}`} state={{from : redirectUrl}} replace/>
+        return (
+            <Navigate to={`${PATHS.SIGN_IN}`} state={{ from: redirectUrl }} replace />
         )
     }
 
-    return <Outlet/>
+    return <Outlet />
 }
 
 export default AuthContextProvider
-export {useAuthContext, WithAuthContext}
+export { useAuthContext, WithAuthContext }

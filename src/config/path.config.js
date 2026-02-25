@@ -10,8 +10,11 @@ const PATHS = {
     CHECKOUT: "/hotel/:id/checkout?",
     PAYMENT_STATUS: "/payments/:bookingId/status",
 
-    PROFILE: '/me/profile',
-    BOOKING_HISTORY: '/me/booking-history'
+    SETTINGS : {
+        PROFILE: '/me/profile',
+        BOOKING_HISTORY: '/me/booking-history',
+        TRAVELERS: '/me/travelers',
+    }
 }
 
 export { PATHS };
