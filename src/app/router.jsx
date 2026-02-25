@@ -50,6 +50,10 @@ const router = createBrowserRouter(
             path={PATHS.CHECKOUT}
             lazy={()=>import("./checkout").then(module=>({Component : module.default}))}
           />
+          <Route
+            path = {PATHS.PAYMENT_STATUS}
+            lazy={()=>import("./payment").then(module=>({Component : module.default}))}
+          />
         </Route>
         <Route
             path={PATHS.SIGN_IN}

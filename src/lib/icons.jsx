@@ -1,4 +1,4 @@
-import {Bed, Plane, CarFront, CarTaxiFront, FerrisWheel, Star, Gem, Heart, Check, CircleCheck, Zap, Info, EyeOff, Eye, X, MapPin, BedSingle, User2, CalendarDays, ChevronDown, Minus, Plus, LogInIcon, CalendarClock, ShieldCheck, Mars, Venus, Edit2} from "lucide-react"
+import {Bed, Plane, CarFront, CarTaxiFront, FerrisWheel, Star, Gem, Heart, Check, CircleCheck, Zap, Info, EyeOff, Eye, X, MapPin, BedSingle, User2, CalendarDays, ChevronDown, Minus, Plus, LogInIcon, CalendarClock, ShieldCheck, Mars, Venus, Edit2, Loader2, CheckCircle2, XCircle, Ban, TimerOff, AlertTriangle} from "lucide-react"
 
 const icons = {
     bed : Bed,
@@ -29,6 +29,12 @@ const icons = {
     male: Mars,
     female: Venus,
     edit: Edit2,
+    loader:Loader2,
+    confirmed : CheckCircle2,
+    error : XCircle,
+    cancelled : Ban,
+    expired : TimerOff,
+    maxRetriesExceeded : AlertTriangle,
     twitter: ({ size, ...props }) => (
     <svg
       width={size}
